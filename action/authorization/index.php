@@ -13,24 +13,28 @@ mysqli_set_charset($conn_main, "utf8");
 $sql = "SELECT * FROM authorization WHERE email = '$form_email'";
 $result = mysqli_query($conn_main, $sql);
 // Проверка наличия почты
-if(mysqli_num_rows($result) != 0){
-        $row = $result->fetch_assoc();
-        $user_email = $row["email"];
-        $user_password = $row["password"];
-        $user_name = $row["name"];
-        $user_id = $row["id"];
-}else{
+if(mysqli_num_rows($result) == 0){
     exit ("Неверный Email");
 }
+$row = $result->fetch_assoc();
+$user_email = $row["email"];
+$user_password = $row["password"]; // получаем хешированный пароль из базы
+$user_name = $row["name"];
+$user_id = $row["id"];   
 
-// Сравниваем пароль введеный пользователем и пароль в базе данных
-if ($user_password === $form_password) {
-    // Записываем в сессию id пользователя
+// Сравнение пароля с хешем (важная правка!)
+if (password_verify($form_password, $user_password)) {
+    // Если хеш устарел (например, изменился алгоритм), обновляем его
+    if (password_needs_rehash($user_password, PASSWORD_DEFAULT)) {
+        $new_hash = password_hash($form_password, PASSWORD_DEFAULT);
+        mysqli_query($conn_main, "UPDATE authorization SET password = '$new_hash' WHERE id = $user_id");
+    }
+    
     $_SESSION['user_id_session'] = $user_id;
-    header("Location: /index.php"); //перенос на главную странницу
+    header("Location: /index.php");
     exit();
-}else{
-    exit ("Неверный Пароль");
+} else {
+    exit("Неверный Пароль");
 }
 
 function test_input($data) {

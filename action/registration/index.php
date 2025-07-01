@@ -17,8 +17,11 @@ if (mysqli_num_rows($result) > 0) {
     echo "ERROR" . $conn_main->error;
 }
 
+// Хеширование пароля
+$hashed_password = password_hash($form_password, PASSWORD_DEFAULT);
+
 // Вставляем данные нового пользователя
-$sql = "INSERT INTO authorization (email, password, name) VALUES ('$form_email', '$form_password', '$form_name')";
+$sql = "INSERT INTO authorization (email, password, name) VALUES ('$form_email', '$hashed_password', '$form_name')";
 if($conn_main->query($sql)){
     $user_id = $conn_main->insert_id;
     $_SESSION['user_id_session'] = $user_id;
