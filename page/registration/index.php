@@ -13,7 +13,7 @@
         <p>Присоединяйтесь к нам!</p>
         <form action="/action/registration/" method="post" id="authForm">
             <input class="form_name" type="text" name="form-name" placeholder="Введите ваше имя" required>
-            <input class="form_email" type="email" name="form-email" placeholder="Введите почту" required>
+            <input class="form_email" type="email" name="form-email" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" title="Введите корректный email (например, user@example.com)" placeholder="Введите почту" required>
             <input class="form_password" type="password" autocomplete="off" name="form-password" placeholder="Придумайте пароль"  required>
         </form>
         <button type="submit" name="input_registration" class="button_form" form="authForm">

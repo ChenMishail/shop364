@@ -6,20 +6,19 @@ if (isset($_POST['input_authorization'])){
 }else {
     exit('Некорректный метод POST.');
 }
-echo $form_email;
-echo $form_password;
 //подключение базы данных
 require_once $_SERVER['DOCUMENT_ROOT'] . '/connection-bd/connection-bd.php';
 mysqli_set_charset($conn_main, "utf8");
 
 $sql = "SELECT * FROM authorization WHERE email = '$form_email'";
-if($result = mysqli_query($conn_main, $sql)){
-    $row = $result->fetch_assoc();
-
-    $user_email = $row["email"];
-    $user_password = $row["password"];
-    $user_name = $row["name"];
-    $user_id = $row["id"];
+$result = mysqli_query($conn_main, $sql);
+// Проверка наличия почты
+if(mysqli_num_rows($result) != 0){
+        $row = $result->fetch_assoc();
+        $user_email = $row["email"];
+        $user_password = $row["password"];
+        $user_name = $row["name"];
+        $user_id = $row["id"];
 }else{
     exit ("Неверный Email");
 }

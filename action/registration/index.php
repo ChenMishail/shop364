@@ -17,6 +17,7 @@ if (mysqli_num_rows($result) > 0) {
     echo "ERROR" . $conn_main->error;
 }
 
+// Вставляем данные нового пользователя
 $sql = "INSERT INTO authorization (email, password, name) VALUES ('$form_email', '$form_password', '$form_name')";
 if($conn_main->query($sql)){
     $user_id = $conn_main->insert_id;

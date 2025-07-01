@@ -15,7 +15,7 @@
         <p>С возвращенем!<br>
         Мы скучали по Вам!</p>
         <form action="/action/authorization/" method="post" id="authForm">
-            <input type="email" class="form_email" name="form-email" placeholder="Введите почту или имя пользователя" required>
+            <input type="email" class="form_email" name="form-email" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" title="Введите корректный email (например, user@example.com)" placeholder="Введите почту или имя пользователя" required>
             <input type="password" class="form_password" name="form-password" placeholder="Введите пароль" required>>
         </form>
         <button type="submit" name="input_authorization" class="button_form" form="authForm">Войти</button>
