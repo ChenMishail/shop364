@@ -13,6 +13,7 @@ $user_id_roles = 0;
 // если нет в сессии user_id отправляем пользователя на авторизаацию
 if (!empty($_SESSION['user_id_session'])) {
     $user_id = $_SESSION['user_id_session'];
+    $_SESSION['last_url'] = $_SERVER['REQUEST_URI'];
 } else{
     // Тут записываем в ссесию ссылку на которой находимся!
     $_SESSION['last_url'] = $_SERVER['REQUEST_URI'];
