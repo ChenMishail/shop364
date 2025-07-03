@@ -23,7 +23,7 @@ $nickname = htmlspecialchars($row['name'] ?? 'Гость'); // Защита от
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Site</title>
     <!--link CSS-->
-    <link rel="stylesheet" type="text/css" href="home_styles.css" media="all">
+    <link rel="stylesheet" type="text/css" href="css/home_styles.css" media="all">
     <!--box icons-->
     <link rel="stylesheet"
     href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
@@ -346,7 +346,7 @@ $nickname = htmlspecialchars($row['name'] ?? 'Гость'); // Защита от
     <!-- Swiper JS -->
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <!--link js-->
-    <script src="home.js" ></script>
+    <script src="js/home.js" ></script>
 
     
 </body>

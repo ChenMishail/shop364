@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
-    <link rel="stylesheet" href="login_styles.css">
+    <link rel="stylesheet" href="/css/login_styles.css">
     <title>Login Form</title>
 
 </head>
