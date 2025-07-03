@@ -14,7 +14,9 @@ $sql = "SELECT * FROM authorization WHERE email = '$form_email'";
 $result = mysqli_query($conn_main, $sql);
 // Проверка наличия почты
 if(mysqli_num_rows($result) == 0){
-    exit ("Неверный Email");
+    $_SESSION['login_error'] = "Неверная почта";
+    header("Location: /page/authorization/");
+    exit();
 }
 $row = $result->fetch_assoc();
 $user_email = $row["email"];
@@ -22,7 +24,7 @@ $user_password = $row["password"]; // получаем хешированный 
 $user_name = $row["name"];
 $user_id = $row["id"];   
 
-// Сравнение пароля с хешем (важная правка!)
+// Сравнение пароля с хешем
 if (password_verify($form_password, $user_password)) {
     // Если хеш устарел (например, изменился алгоритм), обновляем его
     if (password_needs_rehash($user_password, PASSWORD_DEFAULT)) {
@@ -34,7 +36,9 @@ if (password_verify($form_password, $user_password)) {
     header("Location: /index.php");
     exit();
 } else {
-    exit("Неверный Пароль");
+    $_SESSION['login_error'] = "Неверный пароль";
+    header("Location: /page/authorization/");
+    exit();
 }
 
 function test_input($data) {

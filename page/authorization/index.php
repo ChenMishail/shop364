@@ -1,7 +1,8 @@
 <?php session_start();
 if (!empty($_SESSION['user_id_session'])) {
     header("Location: " . $_SESSION['last_url']);
-}?>
+}
+?>
 
 <!DOCTYPE html>
 <html>
@@ -15,6 +16,15 @@ if (!empty($_SESSION['user_id_session'])) {
 <body>
     <div class="wrapper">
         <h1>Здраствуйте</h1>
+        <!-- Блок для вывода ошибок -->
+        <?php if (isset($_SESSION['login_error'])): ?>
+            <div class="error-message" style="color: red; margin-bottom: 15px;">
+                <?php 
+                    echo $_SESSION['login_error']; 
+                    unset($_SESSION['login_error']); // Удаляем ошибку после показа
+                ?>
+            </div>
+        <?php endif; ?>
         <p>С возвращенем!<br>
         Мы скучали по Вам!</p>
         <form action="/action/authorization/" method="post" id="authForm">

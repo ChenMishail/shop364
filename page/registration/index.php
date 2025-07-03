@@ -12,6 +12,15 @@
 <body>
     <div class="wrapper">
         <h1>Регистрация</h1>
+        <!-- Блок для вывода ошибок -->
+        <?php if (isset($_SESSION['login_error'])): ?>
+            <div class="error-message" style="color: red; margin-bottom: 15px;">
+                <?php 
+                    echo $_SESSION['login_error']; 
+                    unset($_SESSION['login_error']); // Удаляем ошибку после показа
+                ?>
+            </div>
+        <?php endif; ?>
         <p>Присоединяйтесь к нам!</p>
         <form action="/action/registration/" method="post" id="authForm">
             <input class="form_name" type="text" name="form-name" placeholder="Введите ваше имя" required>

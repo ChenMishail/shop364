@@ -11,7 +11,8 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/connection-bd/connection-bd.php';
 // Проверка почты в системе
 $result = mysqli_query($conn_main, "SELECT id FROM authorization WHERE email = '$form_email'");
 if (mysqli_num_rows($result) > 0) {
-    echo "пользователь с такой почтой уже существует";
+    $_SESSION['login_error'] = "Пользователь с такой почтой уже существует";
+    header("Location: /page/registration/");
     exit();
 }else{
     echo "ERROR" . $conn_main->error;
@@ -26,7 +27,7 @@ if($conn_main->query($sql)){
     $user_id = $conn_main->insert_id;
     $_SESSION['user_id_session'] = $user_id;
     header("Location: /index.php");
-    exit();    // прерываем работу скрипта, чтобы забыл о прошлом
+    exit();
 }else{
     echo "ERROR" . $conn_main->error;
 }
