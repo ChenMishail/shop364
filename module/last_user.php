@@ -15,7 +15,7 @@ if (!empty($_SESSION['user_id_session'])) {
     $user_id = $_SESSION['user_id_session'];
     $_SESSION['last_url'] = $_SERVER['REQUEST_URI'];
 } else{
-    // Тут записываем в ссесию ссылку на которой находимся!
+    // Тут записываем в ссесию ссылку на которой находимся
     $_SESSION['last_url'] = $_SERVER['REQUEST_URI'];
     header("Location: /page/authorization");
     exit();

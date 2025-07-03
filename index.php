@@ -1,5 +1,19 @@
 <?php
 require_once $_SERVER['DOCUMENT_ROOT'] . '/module/last_user.php';
+// Подключаемся к базе данных
+require_once $_SERVER['DOCUMENT_ROOT'] . '/connection-bd/connection-bd.php';
+$user_id = $_SESSION['user_id_session'];
+
+// Запрашиваем никнейм из базы
+$sql = "SELECT name FROM authorization WHERE id = $user_id";
+$result = mysqli_query($conn_main, $sql);
+
+if (!$result || mysqli_num_rows($result) == 0) {
+    die("Ошибка: пользователь не найден");
+}
+
+$row = mysqli_fetch_assoc($result);
+$nickname = htmlspecialchars($row['name'] ?? 'Гость'); // Защита от XSS
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -45,7 +59,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/module/last_user.php';
         <!--profile-->
         <div class="profile">
             <img src="home_img/user.png" alt="">
-            <span>yarikbely</span>
+            <span><?php echo htmlspecialchars($nickname); ?></span>
             <i class='bx bx-caret-down' ></i>
         </div>
     </header>
