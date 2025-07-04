@@ -60,8 +60,8 @@ $nickname = htmlspecialchars($row['name'] ?? 'Гость'); // Защита от
             <img src="home_img/user.png" alt="">
             <span><?php echo htmlspecialchars($nickname); ?>
                 <ul>
-                    <li><a href="#"> <i class='bx bxs-right-arrow-alt' ></i> Изменить</a></li>
-                    <li><a href="#"> <i class='bx bxs-right-arrow-alt' ></i> Выйти</a></li>
+                    <li><a href="/page/profile/"> <i class='bx bxs-right-arrow-alt' ></i> Изменить</a></li>
+                    <li><a href="/action/profile/logout.php"> <i class='bx bxs-right-arrow-alt' ></i> Выйти</a></li>
                 </ul>
             </span>
             <i class='bx bx-caret-down'></i>
