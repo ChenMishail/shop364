@@ -67,7 +67,6 @@ body {
     color: var(--light-orange-color);
 }
 
-
 .wrapper {
     width: 400px;
     padding: 2rem;
@@ -134,7 +133,7 @@ button:hover {
 
 .icons i:hover {
     background: #dfe9f5;
-    transition: 1s;
+    transition: 0.5s;
 }
 
 .icons i:first-child {
@@ -158,4 +157,42 @@ a:hover {
 .error-message {
     color: red;
     margin-bottom: 15px;
+}
+
+@media (min-width: 576px) {
+    :root {
+        --base-font-size: 1.05rem;
+    }
+}
+
+@media (min-width: 768px) {
+    :root {
+        --base-font-size: 1.1rem;
+    }
+}
+
+@media (min-width: 992px) {
+    :root {
+        --base-font-size: 1.15rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    :root {
+        --base-font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .wrapper {
+        padding: 1.5rem;
+    }
+    
+    .logo {
+        font-size: calc(var(--base-font-size) * 1.1);
+    }
+    
+    .logo i {
+        font-size: calc(var(--base-font-size) * 1.3);
+    }
 }

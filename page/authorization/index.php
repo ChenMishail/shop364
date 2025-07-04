@@ -21,7 +21,7 @@ if (!empty($_SESSION['user_id_session'])) {
         <h1>Здраствуйте</h1>
         <!-- Блок для вывода ошибок -->
         <?php if (isset($_SESSION['login_error'])): ?>
-            <div class="error-message" style="color: red; margin-bottom: 15px;">
+            <div class="error-message">
                 <?php 
                     echo $_SESSION['login_error']; 
                     unset($_SESSION['login_error']); // Удаляем ошибку после показа
@@ -32,7 +32,7 @@ if (!empty($_SESSION['user_id_session'])) {
         Мы скучали по Вам!</p>
         <form action="/action/authorization/" method="post" id="authForm">
             <input type="email" class="form_email" name="form-email" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" title="Введите корректный email (например, user@example.com)" placeholder="Введите почту или имя пользователя" required>
-            <input type="password" class="form_password" name="form-password" placeholder="Введите пароль" required>>
+            <input type="password" class="form_password" name="form-password" placeholder="Введите пароль" required>
         </form>
         <button type="submit" name="input_authorization" class="button_form" form="authForm">Войти</button>
         <p class="or">Авторизоваться через социальные сети</p>
