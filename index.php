@@ -19,7 +19,6 @@ $nickname = htmlspecialchars($row['name'] ?? 'Гость'); // Защита от
 <html lang="ru">
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="viewport" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Site</title>
     <!--link CSS-->
@@ -74,6 +73,9 @@ $nickname = htmlspecialchars($row['name'] ?? 'Гость'); // Защита от
                     <a href="#" class="btn">КУПИТЬ СЕЙЧАС<i class='bx bxs-right-arrow-alt' ></i></a>
                 </div>
                 <img src="home_img/products/shashlik.jpg" alt="">
+                <img src="home_img/products/cake.jpg" alt="">
+                <img src="home_img/products/lipton.jpg" alt="">
+                <img src="home_img/products/litenergy.jpg" alt="">
             </div>
             <!--Slide 2-->
             <div class="swiper-slide container">
@@ -83,6 +85,9 @@ $nickname = htmlspecialchars($row['name'] ?? 'Гость'); // Защита от
                     <a href="#" class="btn">КУПИТЬ СЕЙЧАС<i class='bx bxs-right-arrow-alt' ></i></a>
                 </div>
                 <img src="home_img/products/ice_cream.jpg" alt="">
+                <img src="home_img/products/water.jpg" alt="">
+                <img src="home_img/products/vodka.jpg" alt="">
+                <img src="home_img/products/ogurchik.jpg" alt="">
             </div>
             <!--Slide 3-->
             <div class="swiper-slide container">
@@ -91,7 +96,10 @@ $nickname = htmlspecialchars($row['name'] ?? 'Гость'); // Защита от
                     <h1><br> Зарядись энергией лета! <br></h1>
                     <a href="#" class="btn">КУПИТЬ СЕЙЧАС<i class='bx bxs-right-arrow-alt bx-rotate-90' ></i></a>
                 </div>
-                <img src="home_img/products/litenergy.jpg" alt="">
+                <img src="home_img/products/grape.jpg" alt="">
+                <img src="home_img/products/watermelon.jpg" alt="">
+                <img src="home_img/products/lipton.jpg" alt="">
+                <img src="home_img/products/water.jpg" alt="">
             </div>
         </div>
         <div class="swiper-button-next"></div>
