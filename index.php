@@ -56,11 +56,17 @@ $nickname = htmlspecialchars($row['name'] ?? 'Гость'); // Защита от
             <li><a href="#customers">Отзывы</a></li>
         </ul>
         <!--profile-->
-        <div class="profile">
+                <div class="profile">
             <img src="home_img/user.png" alt="">
-            <span><?php echo htmlspecialchars($nickname); ?></span>
-            <i class='bx bx-caret-down' ></i>
+            <span><?php echo htmlspecialchars($nickname); ?>
+                <ul>
+                    <li><a href="#"> <i class='bx bxs-right-arrow-alt' ></i> Изменить</a></li>
+                    <li><a href="#"> <i class='bx bxs-right-arrow-alt' ></i> Выйти</a></li>
+                </ul>
+            </span>
+            <i class='bx bx-caret-down'></i>
         </div>
+
     </header>
     <!--Home-->
     <section class="home swiper" id="home">
@@ -94,6 +100,7 @@ $nickname = htmlspecialchars($row['name'] ?? 'Гость'); // Защита от
                 <div class="home-text">
                     <span>We are delicacy</span>
                     <h1><br> Зарядись энергией лета! <br></h1>
+
                     <a href="#" class="btn">КУПИТЬ СЕЙЧАС<i class='bx bxs-right-arrow-alt bx-rotate-90' ></i></a>
                 </div>
                 <img src="home_img/products/grape.jpg" alt="">
@@ -188,6 +195,7 @@ $nickname = htmlspecialchars($row['name'] ?? 'Гость'); // Защита от
                 <img src="home_img/products/lipton.jpg" alt="">
                 <h2>Напиток холодный черный чай Липтон Лимон</h2>
                 <h3 class="price">109,99<span> руб</span></h3>
+
                 <i class='bx bx-cart-alt' ></i>
                 <i class='bx bx-heart' ></i>
                 <span class="discount">-27%</span>
@@ -252,6 +260,7 @@ $nickname = htmlspecialchars($row['name'] ?? 'Гость'); // Защита от
                     </div>
                     <i class='bx bxs-quote-alt-left' ></i>
                     <p>Блин все реально классно, классный ассортимент, вообще все классно!</p>
+                
 
                 <!--Review 2-->
                 <div class="box">
@@ -342,6 +351,7 @@ $nickname = htmlspecialchars($row['name'] ?? 'Гость'); // Защита от
                     <input type="email" name="" id="" placeholder="введите почту">
                     <i class='bx bx-arrow-back bx-rotate-180' ></i>
                 </form>
+
 
             </div>
         </div>

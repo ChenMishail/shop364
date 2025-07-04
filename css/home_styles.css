@@ -59,10 +59,52 @@ header{
 }
 
 .profile {
-   display: flex;
-   align-items: center;
-   column-gap: 0.5rem;
-   cursor: pointer; 
+    position: relative;
+    display: flex;
+    align-items: center;
+    column-gap: 0.5rem;
+    cursor: pointer;
+}
+
+.profile span ul {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 180px;
+    background-color: var(--red-color);
+    color: var(--text-color);
+    display: none;
+    padding: 10px;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    z-index: 1000;
+}
+
+.profile:hover ul {
+    display: block;
+}
+
+.profile span ul li {
+    width: 100%;
+    font-size: 18px;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.profile span ul li:last-child {
+    border-bottom: none;
+}
+
+.profile span ul li a {
+    color: var(--bg-color);
+    display: block;
+    padding: 5px 10px;
+    
+}
+
+.profile span ul li a:hover {
+    background-color: var(--light-orange-color);
+    border-radius: 0.3rem;
 }
 
 .profile img {
@@ -71,12 +113,6 @@ header{
     object-fit: cover;
     object-position: center;
     border-radius: 50%;
-}
-
-
-.profile span{
-    font-size: 13px;
-    font-weight: 500;
 }
 
 .logo{
