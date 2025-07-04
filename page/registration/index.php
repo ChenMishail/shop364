@@ -10,6 +10,9 @@
 
 </head>
 <body>
+    <header class="header">
+        <a href="#" class="logo"><i class='bx bx-basket'></i> ОНЛАЙН МАГАЗИН 364 ДНЯ</a>
+    </header>
     <div class="wrapper">
         <h1>Регистрация</h1>
         <!-- Блок для вывода ошибок -->

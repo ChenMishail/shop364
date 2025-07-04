@@ -1,39 +1,97 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-*{
+
+* {
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
+    list-style: none;
+    text-decoration: none;
+    scroll-behavior: smooth;
 }
+
+:root {
+    --red-color: #8f0f0f;
+    --orange-color: #d63d29;
+    --light-orange-color: #d34e26;
+    --light-red-color: #f00000;
+    --text-color: #1a2428;
+    --bg-color: #fff;
+}
+
+::-webkit-scrollbar{
+    width: 0.5rem;
+    background: var(--orange-colot);
+}
+::-webkit-scrollbar-thumb{
+    width: 0.5rem;
+    background: var(--orange-colot);
+    border-radius: 5rem;
+}
+
 body {
     background: #dfe9f5;
+    min-height: 100vh;
+    margin: 0;
+    padding-top: 80px; 
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    margin: 0;
 }
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    background: var(--bg-color);
+    box-shadow: 0 8px 11px rgb(14 55 54 / 15%);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-color);
+    column-gap: 0.5rem;
+}
+
+.logo .bx {
+    font-size: 24px;
+    color: var(--light-orange-color);
+}
+
 
 .wrapper {
     width: 400px;
-    padding: 2rem 0 1rem 0;
+    padding: 2rem;
     background: #fff;
     border-radius: 10px;
     text-align: center;
     box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
-
+    margin: 20px 0;
 }
-h1{
+
+h1 {
     font-size: 2rem;
     color: black;
 }
-p{
-    margin-top: 1,7rem;
+
+p {
+    margin-top: 1.7rem;
 }
-form{
+
+form {
     padding-top: 1.5rem;
 }
-form input{
+
+form input {
     width: 85%;
     outline: none;
     border: none;
@@ -42,7 +100,8 @@ form input{
     margin-bottom: 10px;
     border-radius: 10px;
 }
-button{
+
+button {
     font-size: 1.1rem;
     margin-top: 1rem;
     padding: 8px 0;
@@ -53,37 +112,50 @@ button{
     color: #fff;
     cursor: pointer;
 }
-button:hover{
+
+button:hover {
     background: maroon;
 }
-.or{
+
+.or {
     font-size: 1rem;
     margin: 1.5rem;
 }
-.icons i{
+
+.icons i {
     color: blue;
-    padding: 00.8rem 1.5rem;
+    padding: 0.8rem 1.5rem;
     border-radius: 10px;
     margin-left: .9rem;
     font-size: 1.5rem;
     cursor: pointer;
     border: 2px solid #dfe9f5;
 }
-.icons i:hover{
+
+.icons i:hover {
     background: #dfe9f5;
     transition: 1s;
 }
-.icons i:first-child{
+
+.icons i:first-child {
     color: palevioletred;
 }
-.icons i:last-child{
+
+.icons i:last-child {
     color: red;
 }
-.signup{
+
+.signup {
     text-decoration: none;
     font-size: 0.8rem;
     margin: 0.2rem 1.7rem 0 0;
 }
-a::hover{
+
+a:hover {
     text-decoration: underline;
+}
+
+.error-message {
+    color: red;
+    margin-bottom: 15px;
 }

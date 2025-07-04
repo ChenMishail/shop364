@@ -14,6 +14,9 @@ if (!empty($_SESSION['user_id_session'])) {
 
 </head>
 <body>
+    <header class="header">
+         <a href="#" class="logo"><i class='bx bx-basket'></i> ОНЛАЙН МАГАЗИН 364 ДНЯ</a>
+    </header>
     <div class="wrapper">
         <h1>Здраствуйте</h1>
         <!-- Блок для вывода ошибок -->
@@ -39,7 +42,7 @@ if (!empty($_SESSION['user_id_session'])) {
             <i class="bx bxl-youtube"></i>
         </div>
         <div class="signup">
-            Впервые здесь? <a href="/page/registration">Зарегиструйтесь здесь</a>
+            Впервые здесь? <a href="/page/registration">Зарегистрируйтесь  здесь</a>
         </div>
     </div> 
 </body>
