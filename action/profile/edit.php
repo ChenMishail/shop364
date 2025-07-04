@@ -34,9 +34,9 @@ if(strcmp($form_name, $name) != 0){
     }
 }
 
-
-if ($form_password = NULL) {
+if(trim($form_password) === '') {
     header("Location: /index.php");
+    exit();
 }
 
 // Хеширование пароля
@@ -45,7 +45,7 @@ $hashed_password = password_hash($form_password, PASSWORD_DEFAULT);
 // изминяем пароль пользователя
 $sql = "UPDATE authorization
 SET password = '$hashed_password'
-WHERE id = $user_idd";
+WHERE id = $user_id";
 if($conn_main->query($sql)){
     header("Location: /index.php");
     exit();

@@ -8,8 +8,6 @@ $user_rights = 0;
 $user_employees = 0;
 $user_id_roles = 0;
 
-// проверка прав пользователя
-
 // если нет в сессии user_id отправляем пользователя на авторизаацию
 if (!empty($_SESSION['user_id_session'])) {
     $user_id = $_SESSION['user_id_session'];

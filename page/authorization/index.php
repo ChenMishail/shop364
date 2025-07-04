@@ -1,6 +1,6 @@
 <?php session_start();
 if (!empty($_SESSION['user_id_session'])) {
-    header("Location: " . $_SESSION['last_url']);
+    header("Location: /index.php");
 }
 ?>
 
